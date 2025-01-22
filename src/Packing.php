@@ -35,6 +35,8 @@ class Packing
     const INT16  = 's'; ///< signed short (always 16 bit, machine byte order)
     const UINT32 = 'L'; ///< unsigned long (always 32 bit, machine byte order)
     const INT32  = 'l'; ///< signed long (always 32 bit, machine byte order)
+    const UINT64 = 'Q'; ///< unsigned long long (always 64 bit, machine byte order)
+    const INT64  = 'q'; ///< signed long long (always 64 bit, machine byte order)
     const UCHAR  = 'C'; ///< unsigned char
     const CHAR   = 'c'; ///< signed char
 
@@ -67,6 +69,10 @@ class Packing
                 return 4;
             case self::UINT32:
                 return 4;
+            case self::INT64:
+                return 8;
+            case self::UINT64:
+                return 8;
             default:
                 return 0;
         }
